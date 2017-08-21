@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="dkt-6i-Oe6">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ScC-wX-iZm" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ScC-wX-iZm" customClass="ViewController" customModule="Soundboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I4t-yk-gBw"/>
                         <viewControllerLayoutGuide type="bottom" id="49V-Hd-x6Q"/>
@@ -42,6 +42,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="1qn-sh-ciO" id="I4u-IC-ZpE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wB5-qM-kkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +105,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="xiB-hT-WhI" id="ttR-bO-rWl"/>
                         <outlet property="nameTextField" destination="snp-0H-QHA" id="Eya-zB-MhA"/>
+                        <outlet property="playButton" destination="NVh-mM-m3E" id="KHg-Ny-XPK"/>
                         <outlet property="recordButton" destination="elA-W4-VDU" id="jjx-kf-t7t"/>
                     </connections>
                 </viewController>
