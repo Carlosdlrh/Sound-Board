@@ -61,5 +61,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let archivo = sonidos[indexPath.row]
+            
+            context.delete(archivo)
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do{
+                sonidos = try context.fetch(Sound.fetchRequest())
+                tableView.reloadData()
+            }catch{}
+            
+            print("Archivo Borrado")
+        }
+    }
+    
 }
 
